@@ -9,14 +9,15 @@ function python() {
 export FLASK_APP="$installDir/app.py"
 
 if [ "$1" == "--run" ]; then
+    cd $installDir
+    git pull
     export FLASK_DEBUG=0
     python -m flask run --port 80
 elif [ "$1" == "--debug" ]; then
+    cd $installDir
     export FLASK_DEBUG=1
     python -m flask run --port 8080
 elif [ "$1" == "--install" ]; then
-    cd $installDir
-    git pull
     echo "Work in progress"
 else
     echo "Usage:"
