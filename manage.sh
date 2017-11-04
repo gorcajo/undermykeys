@@ -14,7 +14,9 @@ elif [ "$1" == "--debug" ]; then
     export FLASK_DEBUG=1
     python -m flask run --port 8080
 elif [ "$1" == "--install" ]; then
-    echo "Option not available yet"
+    cd $installDir
+    git pull
+    echo "Work in progress"
 else
     echo "Usage:"
     echo "  $installDir/manage.sh --run       Serves the web, port 80"
