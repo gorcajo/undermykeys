@@ -1,0 +1,49 @@
+<div class='row'>
+    <div class='col-md-2 col-xs-0'>
+        <ul class='list-group'>
+            <li class='list-group-item'>
+                <a id='a-new-code'><i class='fa fa-file-o'></i> New code</a>
+            </li>
+        </ul>
+        <ul class='list-group'>
+            <li class='list-group-item'>
+                <a id='a-example1'><i class='fa fa-folder-open-o'></i> Example #1</a>
+            </li>
+            <li class='list-group-item'>
+                <a id='a-example2'><i class='fa fa-folder-open-o'></i> Example #2</a>
+            </li>
+        </ul>
+
+        <button id='btn-assemble' type='button' class='btn btn-primary btn-block'>
+            <span class='fa fa-cog'></span> Assemble
+        </button>
+
+        <button id='btn-debug-it' type='button' class='btn btn-primary btn-block' style='display: none;'>
+            <span class='fa fa-bug'></span> Debug it!
+        </button>
+
+        <br>
+    </div>
+
+    <div class='col-md-6 col-xs-8'>
+        <div class='row'>
+            <div class='col-md-12'>
+                <textarea id='txt-source'></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class='col-md-4 col-xs-4'>
+        <textarea readonly id='txt-output' class='form-control monospaced' rows='31'></textarea>
+    </div>
+</div>
+
+<div class='row'>
+    <br>
+</div>
+
+<script>
+    /* globals OVER15_BROWSER_ASSEMBLER */
+    "use strict";
+    OVER15_BROWSER_ASSEMBLER.init();
+</script>

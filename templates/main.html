@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <!-- Meta stuff -->
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='description' content='Under My Keys - Guille's jumble'>
+    <meta name='keywords' content='HTML5, JS, JavaScript, Node.js'>
+
+    <!-- Page title and favicon -->
+    <title>UnderMyKeys</title>
+    <link rel='shortcut icon' type='image/x-icon' href='/static/pages/main/images/favicon.ico' />
+
+    <!-- Theme style sheets -->
+    <link href='/static/theme/css/entypo.css' rel='stylesheet'>
+    <link href='/static/theme/css/font-awesome.min.css' rel='stylesheet'>
+    <link href='/static/theme/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='/static/theme/css/mouldifi-core.css' rel='stylesheet'>
+    <link href='/static/theme/css/mouldifi-forms.css' rel='stylesheet'>
+
+    <!-- Theme scripts -->
+    <script src='/static/theme/js/jquery.min.js'></script>
+    <script src='/static/theme/js/bootstrap.min.js'></script>
+    <script src='/static/theme/js/plugins/metismenu/jquery.metisMenu.js'></script>
+    <script src='/static/theme/js/plugins/blockui-master/jquery-ui.js'></script>
+    <script src='/static/theme/js/plugins/blockui-master/jquery.blockUI.js'></script>
+
+    <!-- Modified theme scripts -->
+    <script src='/static/theme/js/functions.js'></script>
+
+    <!-- Main scripts -->
+    <script src='/static/pages/main/js/main.js'></script>
+
+    <!-- Main style sheets -->
+    <link href='/static/pages/main/css/main.css' rel='stylesheet'>
+
+    {% include includes %}
+</head>
+<body>
+
+<!-- Page container -->
+<div class='page-container'>
+
+    <!-- Page sidebar -->
+    <div class='page-sidebar'>
+
+        <!-- Page header -->
+        <header class='site-header'>
+            <div class='site-logo'><a href='/web/home'><img src='/static/pages/main/images/logo.png' alt='UnderMyKeys' title='UnderMyKeys'></a></div>
+            <div class='sidebar-collapse hidden-xs'><a class='sidebar-collapse-icon' href='#'><i class='icon-menu'></i></a></div>
+            <div class='sidebar-mobile-menu visible-xs'><a data-target='#side-nav' data-toggle='collapse' class='mobile-menu-icon' href='#'><i class='icon-menu'></i></a></div>
+        </header>
+
+        <!-- Navigation -->
+        <ul id='side-nav' class='main-menu navbar-collapse collapse'>
+            <li><a href='/web/home'><i class='fa fa-home'></i><span class='title'>Home</span></a>
+            </li>
+            <li class='has-sub'><a><i class='fa fa-cogs'></i><span class='title'>Over15 VM</span></a>
+                <ul class='nav collapse'>
+                    <li><a href='/web/over15/overview'><span class='title'>Overview</span></a></li>
+                    <li><a href='/web/over15/assembler'><span class='title'>Assembler</span></a></li>
+                    <li><a href='/web/over15/debugger'><span class='title'>Debugger</span></a></li>
+                    <li><a href='/web/over15/documentation'><span class='title'>Documentation</span></a></li>
+                </ul>
+            </li>
+            <li class='has-sub'><a><i class='fa fa-map'></i><span class='title'>Procedural Generation</span></a>
+                <ul class='nav collapse'>
+                    <li><a href='/web/procedural/mazes'><span class='title'>Mazes</span></a></li>
+                    <li><a href='/web/procedural/dungeons'><span class='title'>Dungeons</span></a></li>
+                    <li><a href='/web/procedural/terrain'><span class='title'>Terrain</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+  
+    <!-- Main container -->
+    <div class='main-container'>
+        
+        <!-- Main content -->
+        <div class='main-content'>
+
+            <div class='row'>
+                <div class='col-md-12 col-xs-12'>
+                    <h1 class='page-title'>{{ title }}</h1>
+                    <hr>
+                </div>
+            </div>
+
+            {% include content %}
+
+            <br>
+
+            <footer class='footer-main'>
+                Guillermo OG — 
+                &nbsp;
+                <a href='mailto:guillermo.orcajo@gmail.com'><i class='fa fa-envelope'></i></a>
+                &nbsp;
+                <a href='https://es.linkedin.com/in/guillermoorcajo'><i class='fa fa-linkedin-square'></i></a>
+                &nbsp;
+                <a href='https://github.com/gorcajo'><i class='fa fa-github-alt'></i></a>
+            </footer>
+        </div>
+        
+    </div>
+  
+</div>
+
+</body>
+</html>

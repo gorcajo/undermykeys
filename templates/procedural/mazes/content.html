@@ -1,0 +1,57 @@
+<div class='col-sm-3'>
+    <div class='row'>
+        <form class='form-horizontal'>
+            <div class='form-group'>
+                <label class='col-sm-4 control-label'>Width</label>
+                <div class='col-sm-8'> 
+                    <input id='maze-width' type='number' value='64' class='form-control'>
+                </div>
+            </div>
+
+            <div class='form-group'>
+                <label class='col-sm-4 control-label'>High</label>
+                <div class='col-sm-8'> 
+                    <input id='maze-height' type='number' value='36' class='form-control'> 
+                </div>
+            </div>
+
+            <div class='form-group'>
+                <label class='col-sm-4 control-label'>Dead-ends</label>
+                <div class='col-sm-8'> 
+                    <select id='maze-randomness' class='form-control'>
+                        <option value='0' selected='selected'>0%</option>
+                        <option value='25'>25%</option>
+                        <option value='50'>50%</option>
+                        <option value='75'>75%</option>
+                        <option value='100'>100%</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class='form-group'>
+                <label class='col-sm-4 control-label'>Seed</label>
+                <div class='col-sm-8'>
+                    <div class='input-group'>
+                        <input id='maze-seed' type='text' class='form-control' style='font-family:monospace;'> 
+                        <span id='randomize' class='input-group-btn'><button class='btn btn-primary' type='button'><i class='fa fa-random'></i></button></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class='line-dashed'></div>
+
+        <button id='generate' type='button' class='btn btn-primary btn-block'><span class='fa fa-cog'></span> Generate</button>
+        <button id='solve' type='button' class='btn btn-primary btn-block'><span class='fa fa-check'></span> Solve</button>
+    </div>
+</div>
+
+<div class='col-sm-9'>
+    <canvas id='maze-canvas' width='0' height='0' style='margin-left: auto;margin-right: auto;display:block;'></canvas>
+</div>
+
+<script>
+    /* globals PROCEDURAL_MAZE */
+    "use strict";
+    PROCEDURAL_MAZE.init();
+</script>

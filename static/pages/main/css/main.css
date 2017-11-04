@@ -1,0 +1,18 @@
+a {
+    cursor:         pointer;
+    font-weight:    bold;
+}
+
+footer {
+    position:   absolute;
+    right:      0;
+    bottom:     0;
+    left:       0;
+    text-align: center;
+}
+
+.description-text {
+    text-indent:    15px;
+    text-align:     justify;
+    text-justify:   inter-word;
+}

@@ -1,0 +1,17 @@
+body {
+    background-color: #202020;
+}
+
+p {
+    color: #ffffff;
+}
+
+.align-left {
+    float: left;
+    margin: 25px;
+}
+
+.align-right {
+    position:absolute;
+    right:0;
+}

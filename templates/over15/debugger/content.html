@@ -1,0 +1,320 @@
+<div class='row'>
+    <div class='col-md-12 col-xs-12'>
+        <div class='col-md-1 col-xs-1'>
+            <div class='row'>
+                <button id='btn-open-modal' type='button' class='btn btn-primary btn-block btn-xs' data-toggle='modal' data-target='#modal-load'>
+                    Load
+                    <br>
+                    <span class='fa fa-eject'></span>
+                </button>
+
+                <button id='btn-reset' type='button' class='btn btn-primary btn-block btn-xs'>
+                    Reset
+                    <br>
+                    <span class='fa fa-fast-backward'></span>
+                </button>
+
+                <button id='btn-step' type='button' class='btn btn-primary btn-block btn-xs'>
+                    Step
+                    <br>
+                    <span class='fa fa-step-forward'></span>
+                </button>
+
+                <button id='btn-run' type='button' class='btn btn-primary btn-block btn-xs'>
+                    Run
+                    <br>
+                    <span class='fa fa-play'></span>
+                </button>
+
+                <button id='btn-pause' type='button' class='btn btn-primary btn-block btn-xs'>
+                    Pause
+                    <br>
+                    <span class='fa fa-pause'></span>
+                </button>
+            </div>
+        </div>
+
+        <div class='col-md-4 col-xs-4'>
+            <div class='row'>
+                <div class='col-md-12 nopadding-bottom'>
+                    <pre class='nopadding monospaced-strong'>    Addr  Data    Assembly</pre>
+                    <pre id='txt-program' class='nopadding monospaced'></pre>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='col-md-12 nopadding-top text-right'>
+                    <ul class='pagination pagination-sm nopadding-top'>
+                        <li><a id='a-prev'><i class='fa fa-angle-left'></i></a></li>
+                        <li><a id='a-page'>xxxx/xxxx</a></li>
+                        <li><a id='a-next'><i class='fa fa-angle-right'></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class='col-md-7 col-xs-7'>
+            <div class='row'>
+                <div class='col-md-4 col-xs-6'>
+                    <table class='table table-bordered table-condensed monospaced'>
+                        <tr>
+                            <th>Prgrm Counter</th>
+                            <td id='cell-pc'>0000h</td>
+                        </tr>
+                        <tr>
+                            <th>Stack Pointer</th>
+                            <td id='cell-sp'>0h</td>
+                        </tr>
+                    </table>
+
+                    <table class='table table-bordered table-condensed monospaced'>
+                        <tr>
+                            <th>Accumulator</th>
+                            <td id='cell-acc'>0000h</td>
+                        </tr>
+                        <tr>
+                            <th>B Accumulator</th>
+                            <td id='cell-bacc'>0000h</td>
+                        </tr>
+                    </table>
+
+                    <table class='table table-bordered table-condensed monospaced'>
+                        <tr>
+                            <th>Port C</th>
+                            <td id='cell-port-c'>00h</td>
+                        </tr>
+                        <tr>
+                            <th>Port D</th>
+                            <td id='cell-port-d'>00h</td>
+                        </tr>
+                    </table>
+
+                    <table class='table table-bordered table-condensed monospaced'>
+                        <tr>
+                            <th>Carry</th>
+                            <td id='cell-flag-c'>0</td>
+                        </tr>
+                        <tr>
+                            <th>Borrow</th>
+                            <td id='cell-flag-b'>0</td>
+                        </tr>
+                        <tr>
+                            <th>Error</th>
+                            <td id='cell-flag-r'>0</td>
+                        </tr>
+                        <tr>
+                            <th>Stack Overflow</th>
+                            <td id='cell-flag-o'>0</td>
+                        </tr>
+                        <tr>
+                            <th>Less-than</th>
+                            <td id='cell-flag-l'>0</td>
+                        </tr>
+                        <tr>
+                            <th>Equals</th>
+                            <td id='cell-flag-e'>0</td>
+                        </tr>
+                        <tr>
+                            <th>Greater-than</th>
+                            <td id='cell-flag-g'>0</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class='col-md-2 col-xs-6'>
+                    <table class='table table-bordered table-condensed monospaced'>
+                        <tr>
+                            <th colspan='2'>Stack</th>
+                        </tr>
+                        <tr>
+                            <td>fh</td>
+                            <td id='cell-stack-f'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>eh</td>
+                            <td id='cell-stack-e'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>dh</td>
+                            <td id='cell-stack-d'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>ch</td>
+                            <td id='cell-stack-c'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>bh</td>
+                            <td id='cell-stack-b'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>ah</td>
+                            <td id='cell-stack-a'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>9h</td>
+                            <td id='cell-stack-9'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>8h</td>
+                            <td id='cell-stack-8'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>7h</td>
+                            <td id='cell-stack-7'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>6h</td>
+                            <td id='cell-stack-6'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>5h</td>
+                            <td id='cell-stack-5'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>4h</td>
+                            <td id='cell-stack-4'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>3h</td>
+                            <td id='cell-stack-3'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>2h</td>
+                            <td id='cell-stack-2'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>1h</td>
+                            <td id='cell-stack-1'>0000h</td>
+                        </tr>
+                        <tr>
+                            <td>0h</td>
+                            <td id='cell-stack-0'>0000h</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class='col-md-6 col-xs-0'>
+                    <table class='table table-bordered table-condensed monospaced'>
+                        <tr>
+                            <th>Rgstr</th>
+                            <th>Hex</th>
+                            <th>Binary</th>
+                        </tr>
+                        <tr id='row-r0'>
+                            <th>R0</th>
+                            <td id='cell-r0-hex'>0000h</td>
+                            <td id='cell-r0-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-r1'>
+                            <th>R1</th>
+                            <td id='cell-r1-hex'>0000h</td>
+                            <td id='cell-r1-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-r2'>
+                            <th>R2</th>
+                            <td id='cell-r2-hex'>0000h</td>
+                            <td id='cell-r2-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-r3'>
+                            <th>R3</th>
+                            <td id='cell-r3-hex'>0000h</td>
+                            <td id='cell-r3-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-r4'>
+                            <th>R4</th>
+                            <td id='cell-r4-hex'>0000h</td>
+                            <td id='cell-r4-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-r5'>
+                            <th>R5</th>
+                            <td id='cell-r5-hex'>0000h</td>
+                            <td id='cell-r5-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-r6'>
+                            <th>R6</th>
+                            <td id='cell-r6-hex'>0000h</td>
+                            <td id='cell-r6-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-r7'>
+                            <th>R7</th>
+                            <td id='cell-r7-hex'>0000h</td>
+                            <td id='cell-r7-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-r8'>
+                            <th>R8</th>
+                            <td id='cell-r8-hex'>0000h</td>
+                            <td id='cell-r8-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-r9'>
+                            <th>R9</th>
+                            <td id='cell-r9-hex'>0000h</td>
+                            <td id='cell-r9-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-ra'>
+                            <th>Ra</th>
+                            <td id='cell-ra-hex'>0000h</td>
+                            <td id='cell-ra-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-rb'>
+                            <th>Rb</th>
+                            <td id='cell-rb-hex'>0000h</td>
+                            <td id='cell-rb-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-rc'>
+                            <th>Rc</th>
+                            <td id='cell-rc-hex'>0000h</td>
+                            <td id='cell-rc-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-rd'>
+                            <th>Rd</th>
+                            <td id='cell-rd-hex'>0000h</td>
+                            <td id='cell-rd-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-re'>
+                            <th>Re</th>
+                            <td id='cell-re-hex'>0000h</td>
+                            <td id='cell-re-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                        <tr id='row-rf'>
+                            <th>Rf</th>
+                            <td id='cell-rf-hex'>0000h</td>
+                            <td id='cell-rf-bin'>0000 0000 0000 0000</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Load binaries modal -->
+<div id='modal-load' class='modal fade' role='dialog'>
+    <div class='modal-dialog'>
+        <div class='modal-content'>
+
+            <div class='modal-header'>
+                <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                <h4 class='modal-title'>
+                    <span class='glyphicon glyphicon-eject'></span> Load binaries
+                </h4>
+            </div>
+
+            <div class='modal-body'>
+                <textarea id='txt-base64-binaries' class='form-control monospaced' rows='16' placeholder='Paste your Base64 encoded binaries here'></textarea>
+                <p>You can get Base64 encoded binaries from the assembler tool.</p>
+                <p><i>Note: Memory will be truncated at 2KiB for performance issues running the debugger in browser.</i></p>
+            </div>
+
+            <div class='modal-footer'>
+                <button type='button' class='btn btn-primary ' data-dismiss='modal'>Cancel</button>
+                <button id='btn-load' type='button' class='btn btn-primary ' data-dismiss='modal'>Load</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    /* globals OVER15_BROWSER_DEBUGGER */
+    "use strict";
+    OVER15_BROWSER_DEBUGGER.init();
+</script>
