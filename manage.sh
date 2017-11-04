@@ -9,6 +9,7 @@ function python() {
 export FLASK_APP="$installDir/app.py"
 
 if [ "$1" == "--run" ]; then
+    export FLASK_DEBUG=0
     python -m flask run --port 80
 elif [ "$1" == "--debug" ]; then
     export FLASK_DEBUG=1

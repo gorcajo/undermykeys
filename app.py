@@ -11,7 +11,6 @@ app = Flask(__name__)
 @app.route("/web")
 @app.route("/web/")
 def redirectToHome():
-    print("hola")
     return redirect("/web/home")
 
 
