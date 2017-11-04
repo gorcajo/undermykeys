@@ -12,7 +12,7 @@ if [ "$1" == "--run" ]; then
     cd $installDir
     git pull
     export FLASK_DEBUG=0
-    python -m flask run --port 80
+    python -m flask run --host=0.0.0.0 --port 80
 elif [ "$1" == "--debug" ]; then
     cd $installDir
     export FLASK_DEBUG=1
